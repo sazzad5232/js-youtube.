@@ -30,3 +30,27 @@ const myFunction = function(){
 }
 
 console.log(typeof myFunction);
+
+// ++++++++++++++++++++++++++++++++++++++++++++++++
+//stack & heap memory
+// stack(primitive), heap (non-primitive)
+let myYc = "hc.com"
+
+let anothername = myYc
+
+anothername = "cac"
+
+console.log(anothername);
+console.log(myYc);
+
+let userOne = {
+    email:"user@google.com",
+    upi:"user@google.ybl"
+}
+
+let userTwo = userOne
+
+userTwo.email = "sr@google.com"
+
+console.log(userOne.email);
+console.log(userTwo.email);
