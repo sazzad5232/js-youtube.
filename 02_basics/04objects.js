@@ -37,3 +37,34 @@ console.log(Object.values(tinderUser)) //  [ '123abc', 'Sammy', false ]
 console.log(Object.entries(tinderUser)) //  [ '123abc', 'Sammy', false ]
 console.log(tinderUser.hasOwnProperty("isLoggedIn"))  //true er modhe isLoggedIn name e key acha.
 console.log(tinderUser.hasOwnProperty("isLogged"))  //false er modhe isLogged name e kono key nei.
+
+//// objects 02  ////
+ const course = {
+  coursename:"js in hindi",
+  price: "999",
+  courseInstructor: "hi ch"
+ }
+ // course.courseInstructor
+
+ const {courseInstructor} = course
+
+ console.log(courseInstructor) //hi ch
+
+const{courseInstructor:instructor} = course //eivabe courseInstructor name ke instructor name divate kora jai.
+
+ console.log(instructor) //hi ch
+
+//  {
+//   name:"sazzad",
+//   coursename: "js in hindi", ///{etai holo api}
+//   price:"free"
+//  }
+
+// [
+//   {},
+//    {},   //{etaw arekta api er niom}
+//    {}
+// ]
+
+// json formatter diye API er kaj kora hoi//
+//randomuser.me/api url copy kore etike code e format kora jai. 
