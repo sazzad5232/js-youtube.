@@ -54,3 +54,37 @@ function loginUserMessage(username){
     }
 
 console.log(loginUserMessage()) // undefined 
+
+function calculateCartPrice(...num1){
+    return num1
+}
+console.log(calculateCartPrice(300,400,500))// [300,400,500] (...num1) eta likhar fole array er modhe ans hobe. 
+
+function calculateCartPrice(val1,val2,...num1){
+    return num1
+}
+console.log(calculateCartPrice(300,400,500,5002)) // [500,5002] 
+
+const user = {
+    username:"hitesh",
+    price:199
+}
+
+function handleObject(anyobject){
+ console.log(`username is ${anyobject.username} and price is ${anyobject.price}`)
+}
+handleObject(user) //username is hitesh and price is 199
+handleObject({
+    username:"sam",
+    price:399
+}) //username is sam and price is 399
+
+const myNewArry =[300,400,500,200]
+
+function returnSecondValue(){
+    return myNewArry[2]
+}
+
+// console.log(returnSecondValue(myNewArry))  //500
+
+console.log(returnSecondValue([300,400,500,200])) // 500 ei 2 vabe kora jai.
