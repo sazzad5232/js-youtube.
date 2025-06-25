@@ -56,4 +56,52 @@ promise4.then((user)=>{
 }).catch(function(error){
     console.log(error);
     
+}).finally( () => console.log("The promise is either resolved or rejected"))  //The promise is either resolved or rejected.
+
+//5th method
+
+const promiseFive = new Promise(function(resolve, reject){
+     setTimeout(function(){
+     let error = true
+     if(!error){
+        resolve({username:"javascript", password:"5262"})  
+     }else{
+        reject('ERROR: JS went wrong')  
+     }
+   },1000) 
 })
+async function consumePromiseFive(){
+    const response = await promiseFive
+    console.log(response);
+    
+}consumePromiseFive()  //{ username: 'javascript', password: '5262' } error= false hole. error=true hole error hobe.
+
+async function consumePromiseFive(){
+   try{ const response = await promiseFive
+    console.log(response);    //ERROR: JS went wrong asbe ans. error= true holeo, tai eivabe error handle kora jai error asle.
+}catch (error){
+    console.log(error);  
+    }
+    
+}
+consumePromiseFive()
+
+// async function getAllUsers(){
+// try{ 
+//     const response = await fetch('https://jsonplaceholder.typicode.com/users') // ei link e je code ache ta show korbe terminal e. 
+//  const data = await response.json()
+//  console.log(data);
+// }catch(error){
+//     console.log('E: ', error);
+//     }
+// }
+// getAllUsers()
+
+fetch('https://jsonplaceholder.typicode.com/users') //ei link e je code ache ta show korbe terminal e. eivabe o kora jai, but terminal code file run korle ei link er code sobar agai run hoi keno ta depth e jante hobe.
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+    console.log(data);
+})
+.catch((error) => console.log(error))
